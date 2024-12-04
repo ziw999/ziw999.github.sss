@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% load cache %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
+    <link rel="stylesheet" href="{% static "deps/css/video.css" %}">
+{% endblock css %}
+
+{% block modal_cart %}
+{% include "includes/cart_button.html" %}
+{% endblock modal_cart %}
+
+{% block content %}
+
+    {% for el in form %}
+    <div class="alert alert-warning mt-2">
+        <label><h6>Наш адрес:</h6></endlabel>
+        <h4>{{ el.address }}</h4>
+        </div>
+    {% endfor %}
+    
+    {% for el in form %}
+    <div class="alert alert-warning mt-2">
+        <label><h6>Наш телефон:</h6></endlabel>
+        <h4>{{ el.phone }}</h4>
+        </div>
+    {% endfor %}
+    
+    {% for el in form %}
+    <div class="alert alert-warning mt-2">
+        <label><h6>Наш email:</h6></endlabel>
+        <h4>{{ el.email }}</h4>
+        </div>
+    {% endfor %}
+
+    
+{% endblock content %}
+
+{% block footer %}
+<footer class="py-4 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Разработка сайтов</p>
+    </div>
+</footer>
+{% endblock footer %}

@@ -1,0 +1,9 @@
+venv/
+.pylintro
+__pycache__/
+cache/
+.vscode
+.idea
+media
+local_settings.py
+prod_settings.py

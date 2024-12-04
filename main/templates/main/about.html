@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% load cache %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
+    <link rel="stylesheet" href="{% static "deps/css/video.css" %}">
+{% endblock css %}
+
+{% block modal_cart %}
+{% include "includes/cart_button.html" %}
+{% endblock modal_cart %}
+
+{% block content %}
+{% for el in form %}
+    <div class="alert alert-warning mt-2">
+    <h3 >{{ el.content }}</h3>
+      <p>{{ el.article }}</p><br>
+    </div>
+{% endfor %}
+{% endblock content %}
+
+{% block footer %}
+<footer class="py-4 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Разработка сайтов</p>
+    </div>
+</footer>
+{% endblock footer %}
